@@ -5,8 +5,8 @@ This is a Next.js + Shopify Cart API demo! [Check out the site here](https://nex
 Once you have your shop set up, add environment variables to your setup:
 
 ```bash
-SHOPIFY_STOREFRONT_API_TOKEN=feee724f242f40431a4e6e871ad02a56
-SHOPIFY_API_ENDPOINT=https://coconarb.myshopify.com/api/unstable/graphql.json
+SHOPIFY_STOREFRONT_API_TOKEN=example
+SHOPIFY_API_ENDPOINT=https://example.myshopify.com/api/unstable/graphql.json
 ```
 
 ## Getting Started
