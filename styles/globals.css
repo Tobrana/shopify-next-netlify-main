@@ -41,6 +41,7 @@ a:visited {
   text-decoration: none;
   transition: all 0.3s ease;
 }
+
 button {
   border: 1px solid #ccc;
   background: #fff;
@@ -123,6 +124,10 @@ input {
     padding: 0 10px;
     font-size: 0.8rem;
   }
+}
+#search {
+  width: 250px;
+  margin-top: 5px;
 }
 .main-nav-item a {
   color: #000;

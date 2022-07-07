@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import Script from 'next/script'
 import { useAppContext } from "../state";
+import Search from './Search';
+
 
 // import algoliasearch from 'algoliasearch/lite';
 // import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
@@ -33,8 +34,9 @@ export default function Header() {
         </ul>
         
       </nav>
-      <div id="search"></div>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+
+      <Search />
+      
     </header>
   );
 }

@@ -10,6 +10,7 @@ export default function Home({ products }) {
       <Head>
         <title>Life Fitness</title>
         <link rel="icon" href="/favicon.ico" />
+
       </Head>
 
       <Header />
