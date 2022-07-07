@@ -157,7 +157,7 @@ input {
 .testimonial {
   width: 100%;
   height: 280px;
-  background: url(/testimonial-bg.jpeg) 50% no-repeat;
+  background: url('https://www.europeactive.eu/sites/europeactive.eu/files/styles/bootstrap_12_12/public/blog/Life%20Fitness%20Logo%20600x380.png?itok=x8MJWdk_') 50% no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
