@@ -157,7 +157,7 @@ input {
 .testimonial {
   width: 100%;
   height: 280px;
-  background: url('https://www.europeactive.eu/sites/europeactive.eu/files/styles/bootstrap_12_12/public/blog/Life%20Fitness%20Logo%20600x380.png?itok=x8MJWdk_') 50% no-repeat;
+  background: url('https://www.lifefitness.com/resource/image/1665500/landscape_ratio8x3/1560/585/2a03fc62a4d6ce74ba056efca961157b/IF/hd-athletic-nx-university-1.jpg') 50% no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -168,6 +168,22 @@ input {
 .testimonial h2 {
   padding: 0 30px;
   text-align: center;
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-family: Prohibition, AvenirNext, sans-serif;
+  font-size: 58px;
+  font-weight: 700;
+  height: 61.4766px;
+  letter-spacing: 0.7px;
+  line-height: 61.48px;
+  list-style-image: none;
+}
+.testimonial button {
+  margin-top: 20px;
+}
+.testimonial overlay {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .project-credit {
   width: 100%;

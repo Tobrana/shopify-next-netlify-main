@@ -3,11 +3,13 @@ export default function Footer() {
     <>
       <footer>
         <section className="testimonial">
-          {/* <h2>
-            "The interplay of flavors between the cheese, meats and fruits is an
-            absolute delight."
+          
+           <h2>
+            HD ATHLETIC
           </h2>
-          <p>Paul Hotcakes</p> */}
+          <button>
+            Contact a consultant
+          </button>
         </section>
         <section className="app-footer-links">
           <ul>
@@ -33,15 +35,9 @@ export default function Footer() {
           </div>
         </section>
         <div className="project-credit">
-          <p>
-            This project is
-            <a href="https://github.com/chrishannaby/shopify-next-netlify">
-              open source on GitHub
-            </a>
-            , hosted with <a href="https://bit.ly/2G29YwK">Netlify</a>, built
-            with Next.js and made with 💚 by Cassidy Williams (
-            <a href="https://twitter.com/cassidoo">@cassidoo</a>)
-          </p>
+          <p className="text-muted" style={{ textAlign: "center" }}>
+          <small>&copy; {new Date().getFullYear()} LifeFitness</small>
+        </p>
         </div>
       </footer>
     </>
