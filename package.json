@@ -16,7 +16,7 @@
     "react-instantsearch-dom": "^6.29.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.8.0",
+    "@netlify/plugin-nextjs":"4.35.0",
     "netlify-cli": "^10.6.3"
   }
 }
