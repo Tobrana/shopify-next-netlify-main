@@ -48,6 +48,6 @@ export default async (request, context) => {
       'content-type': 'application/json'
     }
   })
-  context.cookies.set('shopping-cart', '', { maxAge: 0 })
+ 
 
 }

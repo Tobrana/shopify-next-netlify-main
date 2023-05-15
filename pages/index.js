@@ -4,6 +4,7 @@ import ProductListing from "@components/ProductListing";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import { getProductList } from "@api/getProductList";
+import Carousel from "@components/Carousel";
 
 export default function Home({ products }) {
   return (
@@ -15,7 +16,7 @@ export default function Home({ products }) {
       </Head>
 
       <Header />
-      <Banner />
+      <Carousel/>
       <main>
         <ul className="product-grid">
           {products.map((p, index) => {
