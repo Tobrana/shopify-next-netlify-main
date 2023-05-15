@@ -3,3 +3,8 @@
 
 [functions]
   directory = "api/functions/"
+
+
+[[edge_functions]]
+function = "shopping-experience"
+path = "/has-something-in-cart"

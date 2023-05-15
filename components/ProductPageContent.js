@@ -85,6 +85,14 @@ export default function ProductPageContent({ product }) {
     setCartId(data.id);
     setCartCount(cartCount + quantity);
 
+    const cartCookie = document.cookie.split("; ").find((row) => {
+      return row.startsWith("shopping-cart");
+    });
+
+    if (!cartCookie) {
+      document.cookie = `shopping-cart=${data.id}; path=/`;
+    }
+
     return data;
   };
 
