@@ -9,18 +9,18 @@ export default function CartPage() {
 
   const [promotion, setPromotion] = useState(null);
 
-  useEffect(() => {
-    const getPromotionForCart = async () => {
-      try {      
-        const res = await fetch('/has-something-in-cart');
-        const data = await res.json();
-        if (data.promotion) {
-          setPromotion(data.promotion);
-        }
-      } catch (err) {
-        console.log(err);
+  const getPromotionForCart = async () => {
+    try {      
+      const res = await fetch('/has-something-in-cart');
+      const data = await res.json();
+      if (data.promotion) {
+        setPromotion(data.promotion);
       }
+    } catch (err) {
+      console.log(err);
     }
+  }
+  useEffect(() => {
 
     getPromotionForCart();
 
