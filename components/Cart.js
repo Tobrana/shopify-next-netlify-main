@@ -9,27 +9,34 @@ export default function Cart() {
   const [cost, setCost] = useState({});
   const { cartId, setCartId } = useAppContext();
 
-  useEffect(async () => {
-    const localCart = cartId;
-
-    if (localCart === null) {
-      setShowProducts(false);
-    } else {
-      setCartId(localCart);
-      const response = await fetch("/.netlify/functions/get-cart", {
-        method: "post",
-        body: JSON.stringify({
-          cartId: localCart,
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
-      const json = await response.json();
-      setProducts(json?.cart?.lines.edges);
-      setCost(json?.cart?.estimatedCost);
-      return json;
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const localCart = cartId;
+  
+        if (localCart === null) {
+          setShowProducts(false);
+        } else {
+          setCartId(localCart);
+          const response = await fetch("/.netlify/functions/get-cart", {
+            method: "post",
+            body: JSON.stringify({
+              cartId: localCart,
+            }),
+            headers: { "Content-Type": "application/json" },
+          });
+          const json = await response.json();
+          setProducts(json?.cart?.lines.edges);
+          setCost(json?.cart?.estimatedCost);
+          return json;
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
+    fetchData();
   }, []);
-
+  
   return (
     <div>
       {showProducts && products?.length > 0 ? (
