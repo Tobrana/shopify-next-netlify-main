@@ -3,19 +3,20 @@ import ProductPageContent from "@components/ProductPageContent";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import { getProductList } from "@api/getProductList";
+import { getProduct } from "@api/getProduct";
 
 export default function ProductPage({ product }) {
   return (
     <div className="container">
       <Head>
-        <title>Life Fitness | Buy {product.node.title}</title>
+        <title>Life Fitness | Buy {product.title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
       <div className="product-page">
         <article>
-          <ProductPageContent product={product.node} />
+          <ProductPageContent product={product} />
         </article>
       </div>
       <Footer />
@@ -25,24 +26,20 @@ export default function ProductPage({ product }) {
 
 export async function getStaticPaths() {
   const products = await getProductList();
-  let routes = products.map((p) => {
-    const params = `/product/${p.node.handle}`;
-    return params;
-  });
+  // let routes = products.map((p) => {
+  //   const params = `/product/${p.node.handle}`;
+  //   return params;
+  // });
 
-  return { paths: routes, fallback: false };
+  return { paths: products.map((p) => ({ params: { product: p?.node?.handle} })), fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  let products = await getProductList();
-
-  let product = products.find((p) => {
-    return p.node.handle === params.product;
-  });
+  let product = await getProduct({ itemHandle: params.product});
 
   return {
     props: {
-      product,
+      product: product.productByHandle,
     },
   };
 }
