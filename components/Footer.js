@@ -27,11 +27,18 @@ export default function Footer() {
           </ul>
           <div className="newsletter">
             <h2 className="newsletter-title">Sign up for our newsletter:</h2>
-            <input
-              className="newsletter-input"
-              type="email"
-              placeholder="Enter your email"
-            />
+            <p className="newsletter-text">Get the latest news and fitness tips from Life Fitness Atlanta</p>
+          <form name="contact" netlify>
+            <p>
+              <label>Name <input className="newsletter-input" type="text" name="name" placeholder="Enter your First Name" /></label>
+            </p>
+            <p>
+              <label>Email <input type="email" className="newsletter-input" name="email" placeholder="Enter your email" /></label>
+            </p>
+            <p>
+              <button type="submit">Send</button>
+            </p>
+          </form>
           </div>
         </section>
         <div className="project-credit">
