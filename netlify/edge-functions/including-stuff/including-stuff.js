@@ -9,4 +9,5 @@ export default async (request, context) => {
   const response = await context.next()
   const text = await response.text()
   return new Response(text.toUpperCase(), response)
+  console.log('Transforming response...')
 }

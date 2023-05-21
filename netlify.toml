@@ -16,3 +16,7 @@ path = "/stuff"
 [[edge_functions]]
 function = "including-stuff"
 path = "/stuff"
+
+[[edge_functions]]
+function = "hello"
+path = "/hello"
