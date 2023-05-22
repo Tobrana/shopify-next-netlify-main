@@ -15,3 +15,7 @@ path = "/has-something-in-cart"
 [[edge_functions]]
 function = "hello"
 path = "/hello"
+
+[[edge_functions]]
+function = "doing-stuff"
+path = "/stuff"

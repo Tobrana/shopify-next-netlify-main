@@ -1,12 +1,28 @@
 export default async (request, context) => {
   const url = new URL(request.url)
 
-  const shoppingHistory = ['item1', 'item2', 'item3']; // Replace with your actual shopping history data
+  switch (url.searchParams.get('action')) {
+    case 'set':
+      context.cookies.set({
+        name: 'action',
+        value: 'hello',
+      })
 
-  context.cookies.set({
-    name: 'shoppingHistory',
-    value: JSON.stringify(shoppingHistory),
-  });
+      return new Response('Cookie value has been set. Reload this page without the "action" parameter to see it.')
 
-  return new Response('Shopping history has been set in the cookie. You can retrieve it on subsequent requests.');
+    case 'clear':
+      context.cookies.delete('action')
+
+      return new Response(
+        'Cookie value has been cleared. Reload this page without the "action" parameter to see the new state.',
+      )
+    default:
+  }
+
+  const value = context.cookies.get('action')
+  const message = value
+    ? `Cookie value is "${value}". You can clear it by using "?action=clear".`
+    : 'Cookie has not been set. You can do so by adding "?action=set" to the URL.'
+
+  return new Response(message)
 }
