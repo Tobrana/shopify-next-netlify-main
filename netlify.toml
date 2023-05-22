@@ -20,3 +20,7 @@ path = "/stuff"
 [[edge_functions]]
 function = "hello"
 path = "/hello"
+
+[[edge_functions]]
+function = "doing-stuff"
+path = "/stuff"
