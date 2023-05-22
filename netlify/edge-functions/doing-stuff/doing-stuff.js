@@ -3,6 +3,7 @@ export default async (request, context) => {
 
   switch (url.searchParams.get('action')) {
     case 'set':
+      await 
       context.cookies.set({
         name: 'action',
         value: 'hello',
