@@ -1,13 +1,18 @@
 export default async (request, context) => {
-  const url = new URL(request.url)
+  const _url = new URL(request.url)
+  // get shopping-cart cookie
+
 
   const cartCookie = context.cookies.get('shopping-cart')
-
+  await context.cookies.set({
+    name: 'shopping-cart',
+    value: '1234',
+  })
   // get visitor_testing_group cookie to see if A or B
   const visitorTestingGroup = context.cookies.get('visitor_testing_group')
 
   console.log('Visitor Testing Group:', visitorTestingGroup)
-
+ 
   // If not, create a new cart
   if (!cartCookie) {
     console.log('Creating a new cart...')
