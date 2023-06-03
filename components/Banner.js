@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <div>
       <p>
-        Get 10% off your first purchase.{" "}
+        Get 20% off your first purchase.{" "}
         <Link href="/cart">
           <h1>Shop Now</h1>
         </Link>
